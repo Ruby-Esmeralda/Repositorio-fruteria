@@ -116,10 +116,7 @@ public class Gui_Fruteria extends JFrame {
 		JButton btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nombre=JOptionPane.showInputDialog(null,"Ingrese la fruta que quiera eliminar");
-				if (nombre !=null && !nombre.isEmpty()) {
-					
-				}
+				
 			}
 		});
 		btnNewButton_2.setBounds(301, 284, 89, 23);
