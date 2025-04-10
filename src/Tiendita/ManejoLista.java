@@ -11,8 +11,11 @@ public class ManejoLista {
 	public void guardar() {
 		
 	}
-	public Nodo buscar(String nombrefruta) {
-		
+	public Nodo buscar(String nombreFruta) {
+		if(primero == null) {
+			primero = nuevo;
+			ultimo= nuevo;
+		}
 	}
 	public void eliminar(String nombreFruta) {
 		if (primero==null) return;
