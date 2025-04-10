@@ -22,7 +22,9 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textNombre;
 	private JTextField textPeso;
 	private JTextField textColor;
+
 	ManejoLista lista  = new ManejoLista("Lista");
+
 	/**
 	 * Launch the application.
 	 */
@@ -99,6 +101,18 @@ public class Gui_Fruteria extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				String nombre= textNombre.getText();
+				String Peso=textPeso.getText();
+				String Color=textColor.getText();
+				
+				if(nombre.isEmpty() || Peso.isEmpty() || Color.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, complete todo lo solicitado.");
+				}else {
+					Float PesoF =Float.parseFloat(Peso);
+					Nodo nuevo = new Nodo (nombre, PesoF, Color);
+					lista.guardar(nuevo);
+					JOptionPane.showMessageDialog(null, "Fruta guardada correctamente");
+				}
 			}
 		});
 		btnNewButton.setBounds(48, 284, 89, 23);

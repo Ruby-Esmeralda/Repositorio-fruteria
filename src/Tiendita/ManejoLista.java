@@ -8,7 +8,15 @@ public class ManejoLista {
 		primero=null;
 		ultimo=null;
 	}
-	public void guardar() {
+
+	public void guardar(Nodo nuevo) {
+		if(primero==null) {
+			primero=nuevo;
+			ultimo=nuevo;
+		}else {
+			ultimo.Siguiente=nuevo;
+			ultimo=nuevo;
+		}
 		
 	}
 	public Nodo buscar(String nombreFruta) {
