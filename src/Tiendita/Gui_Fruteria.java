@@ -6,10 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Gui_Fruteria extends JFrame {
 
@@ -18,7 +22,7 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textNombre;
 	private JTextField textPeso;
 	private JTextField textColor;
-
+	private ManejoLista lista=new ManejoLista("lista");
 	/**
 	 * Launch the application.
 	 */
@@ -92,14 +96,43 @@ public class Gui_Fruteria extends JFrame {
 		contentPane.add(panel_1);
 		
 		JButton btnNewButton = new JButton("Guardar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton.setBounds(48, 284, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Buscar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_1.setBounds(173, 284, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Eliminar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nombre=JOptionPane.showInputDialog(null, "Ingresa el nombre de la fruta a eliminar");
+				if(nombre !=null && !nombre.isEmpty()) {
+					Nodo encontrado=lista.buscar(nombre);
+					if(encontrado !=null) {
+						lista.eliminar(nombre);
+						JOptionPane.showMessageDialog(null, "fruta eliminada");
+						textNombre.setText("");
+						textPeso.setText("");
+						textColor.setText("");
+					}else{
+						JOptionPane.showMessageDialog(null, "Fruta no encontrada");
+					}
+				}else{
+					JOptionPane.showMessageDialog(null, "Fruta no ingresada");
+				}
+			}
+		});
 		btnNewButton_2.setBounds(301, 284, 89, 23);
 		contentPane.add(btnNewButton_2);
 		
