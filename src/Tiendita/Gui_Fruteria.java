@@ -22,7 +22,9 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textNombre;
 	private JTextField textPeso;
 	private JTextField textColor;
+
 	ManejoLista lista  = new ManejoLista("Lista");
+
 	/**
 	 * Launch the application.
 	 */

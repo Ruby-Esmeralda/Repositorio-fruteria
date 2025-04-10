@@ -18,7 +18,7 @@ public class ManejoLista {
 			ultimo=nuevo;
 		}
 	}
-		
+
 	public Nodo buscar(String nombreFruta) {
 		Nodo aux = primero;
 		while(aux != null) {
