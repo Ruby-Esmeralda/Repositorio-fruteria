@@ -12,10 +12,14 @@ public class ManejoLista {
 		
 	}
 	public Nodo buscar(String nombreFruta) {
-		if(primero == null) {
-			primero = nuevo;
-			ultimo= nuevo;
+		Nodo aux = primero;
+		while(aux != null) {
+			if(aux.getNombre().equalsIgnoreCase(nombreFruta)) {
+				return aux;
+			}
+			aux = aux.Siguiente;
 		}
+		return null;
 	}
 	public void eliminar(String nombreFruta) {
 		if (primero==null) return;
