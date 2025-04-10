@@ -100,10 +100,13 @@ public class Gui_Fruteria extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nombre= textNombre.getText();
-				Float Peso=Float.parseFloat(textPeso.getText());
+				String Peso=textPeso.getText();
 				String Color=textColor.getText();
 				if(nombre.isEmpty() || Peso.isEmpty() || Color.isEmpty()) {
-					Nodo nuevo = new Nodo (nombre, Peso, Color);
+					JOptionPane.showMessageDialog(null, "Por favor, complete todo lo solicitado.");
+				}else {
+					Float PesoF =Float.parseFloat(Peso);
+					Nodo nuevo = new Nodo (nombre, PesoF, Color);
 					lista.guardar(nuevo);
 					JOptionPane.showMessageDialog(null, "Fruta guardada correctamente");
 				}
