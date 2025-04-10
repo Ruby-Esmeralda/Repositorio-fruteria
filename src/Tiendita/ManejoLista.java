@@ -17,8 +17,8 @@ public class ManejoLista {
 			ultimo.Siguiente=nuevo;
 			ultimo=nuevo;
 		}
-		
 	}
+
 	public Nodo buscar(String nombreFruta) {
 		Nodo aux = primero;
 		while(aux != null) {

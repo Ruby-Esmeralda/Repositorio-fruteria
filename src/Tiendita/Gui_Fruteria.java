@@ -104,7 +104,7 @@ public class Gui_Fruteria extends JFrame {
 				String nombre= textNombre.getText();
 				String Peso=textPeso.getText();
 				String Color=textColor.getText();
-				
+
 				if(nombre.isEmpty() || Peso.isEmpty() || Color.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Por favor, complete todo lo solicitado.");
 				}else {
