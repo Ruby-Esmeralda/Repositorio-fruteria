@@ -8,6 +8,7 @@ public class ManejoLista {
 		primero=null;
 		ultimo=null;
 	}
+
 	public void guardar(Nodo nuevo) {
 		if(primero==null) {
 			primero=nuevo;
@@ -16,10 +17,17 @@ public class ManejoLista {
 			ultimo.Siguiente=nuevo;
 			ultimo=nuevo;
 		}
-		
 	}
-	public void buscar() {
 		
+	public Nodo buscar(String nombreFruta) {
+		Nodo aux = primero;
+		while(aux != null) {
+			if(aux.getNombre().equalsIgnoreCase(nombreFruta)) {
+				return aux;
+			}
+			aux = aux.Siguiente;
+		}
+		return null;
 	}
 	public void eliminar(String nombreFruta) {
 		if (primero==null) return;
