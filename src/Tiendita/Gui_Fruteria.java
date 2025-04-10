@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -114,7 +116,10 @@ public class Gui_Fruteria extends JFrame {
 		JButton btnNewButton_2 = new JButton("Eliminar");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String nombre=JOptionPane.showInputDialog(null,"Ingrese la fruta que quiera eliminar");
+				if (nombre !=null && !nombre.isEmpty()) {
+					
+				}
 			}
 		});
 		btnNewButton_2.setBounds(301, 284, 89, 23);
