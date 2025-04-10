@@ -11,7 +11,7 @@ public class ManejoLista {
 	public void guardar() {
 		
 	}
-	public void buscar() {
+	public Nodo buscar(String nombrefruta) {
 		
 	}
 	public void eliminar(String nombreFruta) {
