@@ -22,7 +22,7 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textNombre;
 	private JTextField textPeso;
 	private JTextField textColor;
-
+	ManejoLista lista  = new ManejoLista("Lista");
 	/**
 	 * Launch the application.
 	 */
@@ -110,7 +110,7 @@ public class Gui_Fruteria extends JFrame {
 				String nombre = JOptionPane.showInputDialog(null, "Ingresa el nombre de la fruta a buscar:");
 				if(nombre != null && !nombre.isEmpty()) {
 					Nodo encontrado = lista.buscar(nombre);
-					if(encontrando != null) {
+					if(encontrado != null) {
 						textPeso.setText(String.valueOf(encontrado.getPeso()));
 						textColor.setText(encontrado.getColor());
 						String mensaje = "Fruta encontrada:\n" + "Nombre: "+ encontrado.getNombre()+ "\n" + "Peso: "+ encontrado.getPeso()+ "kg" + "\n" + "Color: " + encontrado.getColor();
