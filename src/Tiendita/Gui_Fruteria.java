@@ -99,9 +99,11 @@ public class Gui_Fruteria extends JFrame {
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String nombre= textNombre.getText();
 				String Peso=textPeso.getText();
 				String Color=textColor.getText();
+				
 				if(nombre.isEmpty() || Peso.isEmpty() || Color.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Por favor, complete todo lo solicitado.");
 				}else {
