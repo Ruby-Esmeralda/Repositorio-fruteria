@@ -108,6 +108,7 @@ public class Gui_Fruteria extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				
 			}
 		});
 		btnNewButton_1.setBounds(173, 284, 89, 23);
