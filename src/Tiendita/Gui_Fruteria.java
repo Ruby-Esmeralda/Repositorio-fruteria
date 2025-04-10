@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -21,6 +23,7 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textPeso;
 	private JTextField textColor;
 
+	ManejoLista lista=new ManejoLista("Lista");
 	/**
 	 * Launch the application.
 	 */
@@ -96,7 +99,14 @@ public class Gui_Fruteria extends JFrame {
 		JButton btnNewButton = new JButton("Guardar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String nombre= textNombre.getText();
+				Float Peso=Float.parseFloat(textPeso.getText());
+				String Color=textColor.getText();
+				if(nombre.isEmpty() || Peso.isEmpty() || Color.isEmpty()) {
+					Nodo nuevo = new Nodo (nombre, Peso, Color);
+					lista.guardar(nuevo);
+					JOptionPane.showMessageDialog(null, "Fruta guardada correctamente");
+				}
 			}
 		});
 		btnNewButton.setBounds(48, 284, 89, 23);
