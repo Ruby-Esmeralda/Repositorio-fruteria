@@ -23,7 +23,8 @@ public class Gui_Fruteria extends JFrame {
 	private JTextField textPeso;
 	private JTextField textColor;
 
-	ManejoLista lista=new ManejoLista("Lista");
+	ManejoLista lista  = new ManejoLista("Lista");
+
 	/**
 	 * Launch the application.
 	 */
@@ -120,6 +121,20 @@ public class Gui_Fruteria extends JFrame {
 		JButton btnNewButton_1 = new JButton("Buscar");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String nombre = JOptionPane.showInputDialog(null, "Ingresa el nombre de la fruta a buscar:");
+				if(nombre != null && !nombre.isEmpty()) {
+					Nodo encontrado = lista.buscar(nombre);
+					if(encontrado != null) {
+						textPeso.setText(String.valueOf(encontrado.getPeso()));
+						textColor.setText(encontrado.getColor());
+						String mensaje = "Fruta encontrada:\n" + "Nombre: "+ encontrado.getNombre()+ "\n" + "Peso: "+ encontrado.getPeso()+ "kg" + "\n" + "Color: " + encontrado.getColor();
+					JOptionPane.showMessageDialog(null,  mensaje);
+					} else {
+						JOptionPane.showMessageDialog(null, "Fruta no encontrada.");
+					}
+				} else {
+					JOptionPane.showMessageDialog(null, "No se ha ingresado esa fruta.");
+					}
 				
 			}
 		});
